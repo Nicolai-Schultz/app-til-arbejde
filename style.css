@@ -75,3 +75,12 @@ input[type=text], select, textarea {
   div.element-container.css-1hynsf2.e1tzin5v2{
     background-color: none;
 }
+
+div.css-qcqlej.egzxvld3{
+    background-image: url(https://mobilabonnement.dk/wp-content/uploads/2022/09/Telenor-Mobil.png);
+    background-repeat: no-repeat;
+    background-position:top;
+    margin-top: 30px;
+    padding-top: 50px;
+    background-size: 20%;
+}
