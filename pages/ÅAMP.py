@@ -13,20 +13,33 @@ with open("style.css") as source_des:
 st.title("ÅbenAlleMineProgrammer")
 
 # Text input for URL
-url_input = "https://www.youtube.com/watch?v=FOULV9Xij_8&ab_channel=CodingIsFun"
+#url_input = "https://www.youtube.com/watch?v=FOULV9Xij_8&ab_channel=CodingIsFun"
 
 #1. test om den kan åbne Onescreen og veris gennem VPN
 #2. lav checkbox for at filtrere hvilke hjemmesider der skal åbnes.
 
-sider = st.multiselect("Hvilke sider skal åbnes?..", 
-                       ['Veris', 'OneScreen', 'Rubix'])
+#sider = st.multiselect("Hvilke sider skal åbnes?..", 
+                 #      ['Veris', 'OneScreen', 'Rubix'])
 
-knap_clicked = st.button("Åbn hjemmesid(er)")   
+#knap_clicked = st.button("Åbn hjemmesid(er)")   
 
-if "Rubix" in sider and knap_clicked:
-    webbrowser.open_new_tab("https://rubix.rezponz.dk/default_login.asp")
-if "Veris" in sider and knap_clicked:
-    webbrowser.open_new_tab("https://github.com/victoryhb/streamlit-option-menu")
-if "OneScreen" in sider and knap_clicked:
-    webbrowser.open_new_tab("https://www.w3schools.com/howto/howto_css_contact_form.asp")
+#if "Rubix" in sider and knap_clicked:
+   # webbrowser.open_new_tab("https://rubix.rezponz.dk/default_login.asp")
+#if "Veris" in sider and knap_clicked:
+   # webbrowser.open_new_tab("https://github.com/victoryhb/streamlit-option-menu")
+#if "OneScreen" in sider and knap_clicked:
+   # webbrowser.open_new_tab("https://www.w3schools.com/howto/howto_css_contact_form.asp")
 
+# TODO lav en multiselect hvor man kan bestemme hvilke links der skal vises
+
+links = {
+    "Rubix": "https://rubix.rezponz.dk/default_login.asp",
+    "OSE": "https://studio.code.org/projects/applab/KCID0JvDj-QV4pvpcAdC7h9yECcHx8SnJMQzfD6J3D8",
+    "Outlook": "https://studio.code.org/projects/applab/KCID0JvDj-QV4pvpcAdC7h9yECcHx8SnJMQzfD6J3D8",
+}
+label = "Open links"
+
+# Create a button that opens all the links when clicked
+if st.button(label):
+    for name, link in links.items():
+        st.markdown(f"[{name}]({link})", unsafe_allow_html=True)
