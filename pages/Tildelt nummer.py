@@ -18,6 +18,8 @@ num_days = delta.days  # Number of days between start and end date
 num_seconds = delta.total_seconds()  # Number of seconds between start and end date
 udregning = num_days * ab_pris
 
+#TODO lav en if else hvor hvis der trykkes på knap "Er der flere ab?", kreer nyt input felt og medregn dette. 
+
 if(st.button("BEREGN")):
     formatted_string = "{:.2f}".format(udregning)
 # format to two decimal places
