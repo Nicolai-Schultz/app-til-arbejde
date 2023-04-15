@@ -1,4 +1,7 @@
 import streamlit as st
+from mycomponent import mycomponent
+value = mycomponent(my_input_value="hello there")
+st.write("Received", value)
 
 html_code = '''
 <html lang="en">
@@ -8,18 +11,7 @@ html_code = '''
 
 </head>
 <body>
-	<button id="spin">Spin</button>
-	<span class="arrow"></span>
-	<div class="container">
-		<div class="one">1</div>
-		<div class="two">2</div>
-		<div class="three">3</div>
-		<div class="four">4</div>
-		<div class="five">5</div>
-		<div class="six">6</div>
-		<div class="seven">7</div>
-		<div class="eight">8</div>
-	</div>
+
 </body>
 </html>
 '''
@@ -27,18 +19,7 @@ html_code = '''
 st.markdown(html_code, unsafe_allow_html=True)
 
 js_code = """
-let container = document.querySelector(".container");
-let btn = document.getElementById("spin");
-let number = Math.ceil(Math.random() * 1000);
 
-let clicks = 0;
-btn.onclick = function () {
-  clicks += 1;
-  if(clicks == 1 ){
-	container.style.transform = "rotate(" + number + "deg)";
-	number += Math.ceil(Math.random() * 1000);
-  }
-}
 """
 
 # Render the JavaScript code using st.markdown()

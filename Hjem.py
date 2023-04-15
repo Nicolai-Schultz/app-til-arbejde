@@ -9,4 +9,4 @@ st.header("Velkommen til!")
 st.subheader("Dette er en hjemmeside beregnet til at hjælpe dig med at gøre dit arbejde som konsulent lettere.")
 st.write("Start med at udforske menuen til venstre. Tryk på pilen i venstre øverste hjørne for at komme i gang med at benytte hjemmesiden!")
 
-st.text("Denne app er lavet af Nicolai Schultz (NISCH)")
+st.text("Denne hjemmeside er lavet af Nicolai Schultz (NISCH)")

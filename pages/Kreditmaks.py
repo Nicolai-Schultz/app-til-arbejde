@@ -21,16 +21,16 @@ selected = option_menu(
 )
 
 if selected == "Kreditmaksudregner":
-        kredit_input = st.number_input("Hvad er kundens kreditmaks?", step=1000.0)
-        beløb_input = st.number_input("Indsæt det totale beløb der er årsag til kreditmaks-spærringen.", step=1000.0)
+        kredit_input = st.number_input("Hvad er kundens kreditmaks?", step=1000, value = 1)
+        beløb_input = st.number_input("Indsæt det totale beløb der er årsag til kreditmaks-spærringen.", step=1000)
         udregning = beløb_input - (kredit_input*0.8)+1
         formatted_string = "{:.2f}".format(udregning)
 
-        if(kredit_input < beløb_input):
+        if(beløb_input > kredit_input):
                 st.success(f"Kunden skal indbetale {udregning:.2f} for at deres abonnementer kan genåbnes.")
                 st.write(f"Kopier følgende beskrivelse med udregning ind i loggen: Kunde ringer angående spærring, hvilket er grundet overskridelse af kreditmaks. Informerer at kunde skal indbetale ({beløb_input:.2f} kr - ({kredit_input:.2f} kr * 0.8) + 1 kr = {udregning:.2f} kr), således deres abonnementer genåbnes.")
-        elif kredit_input > beløb_input:
-                st.warning("Hvis ikke skyldige beløb overskrider kreditmaks, er dette ikke årsag til spærring.")
+        else:
+                st.warning("Hvis ikke skyldige beløb overskrider kreditmaks, er dette ikke årsag til spærring. Hvis den er spærret grundet 'Credit limit', under 'Suspension/Resumption', skal du huske at kigge under notifications på den pågældende konto. Se siden 'Hjælp til kreditmaks' for at finde det reelle udestående beløb.")
 
 
 if selected == "Hjælp til kreditmaks":
