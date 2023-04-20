@@ -19,7 +19,7 @@ antal_kald = st.number_input("Hvor mange kald har du taget i dag?", step = 1, va
 salg_til_opnået = (antal_kald * mål_salg)/100
 
 if(mål_salg != ""):
-        st.success(f"Du skal sælge ca. {salg_til_opnået:.2f} genstande for at opnå dit mål denne måned!")
+        st.success(f"Du skal sælge ca. {salg_til_opnået:.2f} genstande for at opnå dit mål i dag!")
 
 st.subheader("Her kan du udregne din GA%.")
 mål_salg_tal_input = (st.number_input("Hvor mange genstande har du solgt i dag? Dette mål afhænger af antal kald og salg.", step = 1, value=1))

@@ -4,7 +4,7 @@ with open("style.css") as source_des:
         st.markdown(f"<style>{source_des.read()}</style>", unsafe_allow_html=True)
 
 st.title("Tildelt nummer udregner")
-st.write("Beregneren kan også bruges til at udregne et hvilket som helst beløb over X antal dage: fx. hvis der skal krediteres for tidal i X dage, mobilforsikring, netsikker plus eller andet!")
+st.write("Beregneren kan også bruges til at udregne et hvilket som helst beløb over x antal dage: fx. hvis der skal krediteres for tidal i x dage, mobilforsikring, netsikker plus eller andet!")
 
 #Main er inddelt i if sætninger - ændres der i én skal der ændres i alle. Ved ændringer, tryk ctrl + shift + l for at ændre lignende highligts samtidigt. 
 

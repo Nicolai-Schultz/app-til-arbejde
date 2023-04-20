@@ -1,7 +1,5 @@
 import streamlit as st
 
-st.set_page_config(page_title="Helpr", page_icon=":tada", layout="wide")
-
 with open("style.css") as source_des:
         st.markdown(f"<style>{source_des.read()}</style>", unsafe_allow_html=True)
 

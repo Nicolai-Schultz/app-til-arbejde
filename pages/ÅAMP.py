@@ -34,11 +34,13 @@ links = {
     "Callback klient": "http://ivabpurect01/book/index.html",
     "Antal kald pr. dag": "http://ivabccr04/Reports/report/Customer/Calls%20per%20employee",
     "Klartid": "https://klartid.nu/login.asp",
+    "HLR": "http://webtools/hlr/",
+    "Timon": "Timon/",
 }
 label = "Open links"
 
 sider = st.multiselect("Hvilke sider skal åbnes?..", 
-                      ["Vis links til alle programmer",'Rubix', 'OneScreen', 'Outlook', "Køoversigt", "Callback klient", "Antal kald pr. dag", "Klartid"])  
+                      ["Vis links til alle programmer",'Rubix', 'OneScreen', 'Outlook', "Køoversigt", "Callback klient", "Antal kald pr. dag", "Klartid", "HLR", "Timon"])  
 
 if "Vis links til alle programmer" in sider:
    for name, link in links.items():
@@ -58,6 +60,10 @@ if "Antal kald pr. dag" in sider:
         st.markdown(f"[Antal kald pr. dag]({links['Antal kald pr. dag']})", unsafe_allow_html=True)
 if "Klartid" in sider:
         st.markdown(f"[Klartid]({links['Klartid']})", unsafe_allow_html=True)
+if "HLR" in sider:
+        st.markdown(f"[HLR]({links['HLR']})", unsafe_allow_html=True)
+if "Timon" in sider:
+        st.markdown(f"[Timon]({links['Timon']})", unsafe_allow_html=True)
 
 
 
