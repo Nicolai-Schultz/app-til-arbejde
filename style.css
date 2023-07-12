@@ -187,3 +187,11 @@ body{
 	outline:none;
 	letter-spacing: 1px;
 }
+
+/* table*/
+div.css-1ec096l.edw49t14 {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+	background-color: #ffff;
+}
