@@ -5,14 +5,16 @@ import pandas as pd
 with open("style.css") as source_des:
         st.markdown(f"<style>{source_des.read()}</style>", unsafe_allow_html=True)
 
-st.header("Velkommen til Kreditmaksudregneren!")
+st.header("Velkommen til Stat-konkurrencen!")
+
+st.subheader("Denne konkurrence kan tilbydes dig af din leder, hvor mål og priser aftales under one2one! Der tildeles en kode til dig af din leder som skal indtastes nedenunder.")
 
 
-
-
-kode = st.text_input("Indtast din kode for at se dine mål")
+kode = st.text_input("Indtast din kode for at se dine mål:")
     
 if kode == "Hej":
+        navn = "Nicolai"
+        st.subheader(f"Velkommen til stat-konkurrencen, {navn}! Din leder har sat følgende mål/incentiver for dig:")
         data = {
         'kpt': [7.5, 8.5, 9.5],
         'ga': [2.5, 3, 3.5],
@@ -28,13 +30,10 @@ if kode == "Hej":
         }
         penge = pd.DataFrame(data_penge)
         penge.index=["20p","25p","30p"]
-
-        st.table(penge)
         df = pd.DataFrame(data)
         df.index=["2p","3p","5p"]
-
         st.table(df)
-
+        st.table(penge)
 
         kpt_input = st.number_input("Hvad er din aktuelle KPT?", step=1.0, value = 7.5)
         ga_input = st.number_input("Hvad er din aktuelle GA%?", step=0.25, value = 2.5)
@@ -43,7 +42,7 @@ if kode == "Hej":
         copc_input = st.number_input("Hvad er din aktuelle COPC%?", step=5, value = 90)
         tæller = 0
 
-        st.subheader("Din leder har sat følgende mål for dig:")
+        
         #KPT sætning
         if kpt_input >= data['kpt'][2]:
               tæller += data2['point'][2]
@@ -110,15 +109,19 @@ if kode == "Hej":
               st.success(f"Du har derfor optjent {data_penge['DKK'][2]} DKK i statkonkurrencen!")
         elif tæller >20<25: 
               st.success(f"Du har derfor optjent {data_penge['DKK'][1]} DKK i statkonkurrencen!")
-        else:
+        elif tæller >= 20:
               st.success(f"Du har derfor optjent {data_penge['DKK'][0]} DKK i statkonkurrencen!")
+        else: 
+              st.success(f"Du har desværre ikke optjent nok point til at modtage en pris denne måned.")
 
     
 if kode == "Hej2":
+        navn = "Adis"
+        st.subheader(f"Velkommen til stat-konkurrencen, {navn}! Din leder har sat følgende mål/incentiver for dig:")
         data = {
         'kpt': [8.5, 9.5, 10.5],
         'ga': [3.5, 4, 5.5],
-        'kt': [20, 30, 50],
+        'kt': [25, 35, 60],
         'csat': [100,100,100],
         'copc': [60, 65, 70],
         }
@@ -126,16 +129,14 @@ if kode == "Hej2":
               'point': [2,3,5],
         }
         data_penge = {
-              'DKK': [200,300,500]
+              'DKK': [300,400,600]
         }
-        penge = pd.DataFrame(data_penge)
-        penge.index=["20p","25p","30p"]
-
-        st.table(penge)
         df = pd.DataFrame(data)
         df.index=["2p","3p","5p"]
-
+        penge = pd.DataFrame(data_penge)
+        penge.index=["20p","25p","30p"]
         st.table(df)
+        st.table(penge)
 
 
         kpt_input = st.number_input("Hvad er din aktuelle KPT?", step=1.0, value = 7.5)
@@ -212,8 +213,10 @@ if kode == "Hej2":
               st.success(f"Du har derfor optjent {data_penge['DKK'][2]} DKK i statkonkurrencen!")
         elif tæller >20<25: 
               st.success(f"Du har derfor optjent {data_penge['DKK'][1]} DKK i statkonkurrencen!")
-        else:
+        elif tæller >= 20:
               st.success(f"Du har derfor optjent {data_penge['DKK'][0]} DKK i statkonkurrencen!")
+        else: 
+              st.success(f"Du har desværre ikke optjent nok point til at modtage en pris denne måned.")
 
               
               
